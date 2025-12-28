@@ -3,7 +3,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="/root/.oh-my-zsh"
+
+
+#-----------------------------------------------------------------------
+# CORE CONFIGURATION
+#-----------------------------------------------------------------------
+
+# => Path to your Oh My Zsh installationexport ZSH="/root/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
@@ -23,5 +29,14 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ffb86c'           # Wildcards are Orange
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ff5555,bold' # Errors are Red
 
 
+
+
+
 # Load P10K config (we'll customize this next)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#-----------------------------------------------------------------------
+# ALIASES & EXTRAS
+#-----------------------------------------------------------------------
+# You can add your custom aliases below this line.
+# Example: alias cls='clear'
