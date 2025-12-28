@@ -9,16 +9,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-# Your neon-pink autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff79c6,bold"
+# => 1. Auto-Suggestion Color (The "Ghost" text)
+# I changed this to Grey (#6272a4) so it looks different from your typing.
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4,bold"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4"
 
-# Your syntax colors
-ZSH_HIGHLIGHT_STYLES[command]='fg=#ff79c6,bold'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#8be9fd,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#50fa7b,bold'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#f1fa8c,underline'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ffb86c'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ff5555,bold'
+# => 2. Syntax Highlighting Colors (The text you actually type)
+ZSH_HIGHLIGHT_STYLES[command]='fg=#ff79c6,bold'       # Your commands stay Neon Pink
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#8be9fd,bold'         # Aliases are Cyan
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#50fa7b,bold'       # Built-in cmds are Green
+ZSH_HIGHLIGHT_STYLES[path]='fg=#f1fa8c,underline'     # Paths are Yellow
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ffb86c'           # Wildcards are Orange
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ff5555,bold' # Errors are Red
+
 
 # Load P10K config (we'll customize this next)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
