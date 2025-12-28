@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+#-----------------------------------------------------------------------
+# CORE CONFIGURATION
+#-----------------------------------------------------------------------
+
+# => Path to your Oh My Zsh installation
 export ZSH="/root/.oh-my-zsh"
 
 # Classic Kali boxed prompt but ONLY Saleem (no root@host)
@@ -19,35 +25,65 @@ export ZSH="/root/.oh-my-zsh"
 ZSH_THEME="agnoster"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
+
+
+
+
+
+
+
 #DEFAULT_USER="Saleem"
 
-# THIS LINE IS THE ONLY ONE THAT MATTERS
+## THIS LINE IS THE ONLY ONE THAT MATTERS
 #PROMPT='%B%F{cyan}Saleem%f %F{yellow}%~%f%b $ '
 #PROMPT=$'\n┌──(%B%F{cyan}Saleem%f%b %F{yellow}%~%f)\n└─%B%F{magenta}❯%f%b '
 
 #PROMPT="%F{#50fa7b}➜ %F{#f1fa8c}Saleem%f "
 
-##This forces your name
-PROMPT='%B%F{cyan}Saleem%f%b%F{reset} '$PROMPT  
+## This forces your name
+#PROMPT='%B%F{cyan}Saleem%f%b%F{reset} '$PROMPT  
 
-# Keep your neon-pink suggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff79c6,bold"
-
-
-
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
-
+## for neon-pink suggestions
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff79c6,bold"
 
 
-# Paste this block at the end of /root/.zshrc
-ZSH_HIGHLIGHT_STYLES[command]='fg=#ff79c6,bold'      # neon pink
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#8be9fd,bold'        # cyan
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#50fa7b,bold'      # green
-ZSH_HIGHLIGHT_STYLES[path]='fg=#f1fa8c,underline'    # yellow path
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ffb86c'          # orange *
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ff5555,bold' # red invalid
+
+
+
+
+
+
+# => Plugins
+# I kept your list: Git, Man Pages, Suggestions, and Syntax Highlighting
+plugins=(
+    git 
+    colored-man-pages 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+)
+
+# => Source Oh My Zsh (This loads the theme and plugins)
+source $ZSH/oh-my-zsh.sh
+
+
+
+#-----------------------------------------------------------------------
+# UPDATED COLOR CONFIGURATION
+#-----------------------------------------------------------------------
+
+PROMPT='%B%F{cyan}Saleem%f%b%F{reset} '$PROMPT    # This forces your name
+
+# => 1. Auto-Suggestion Color (The "Ghost" text)
+# I changed this to Grey (#6272a4) so it looks different from your typing.
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4"
+
+# => 2. Syntax Highlighting Colors (The text you actually type)
+ZSH_HIGHLIGHT_STYLES[command]='fg=#ff79c6,bold'       # Your commands stay Neon Pink
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#8be9fd,bold'         # Aliases are Cyan
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#50fa7b,bold'       # Built-in cmds are Green
+ZSH_HIGHLIGHT_STYLES[path]='fg=#f1fa8c,underline'     # Paths are Yellow
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ffb86c'           # Wildcards are Orange
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ff5555,bold' # Errors are Red
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -76,7 +112,8 @@ SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
 SPACESHIP_USER_COLOR="cyan"
 
-PROMPT='%B%F{cyan}Saleem%f%b%F{reset} '$PROMPT   # This forces your name
-
-# Keep your neon-pink suggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff79c6,bold"
+#-----------------------------------------------------------------------
+# ALIASES & EXTRAS
+#-----------------------------------------------------------------------
+# You can add your custom aliases below this line.
+# Example: alias cls='clear'
