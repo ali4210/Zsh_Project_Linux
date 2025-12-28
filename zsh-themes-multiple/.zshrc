@@ -76,6 +76,8 @@ PROMPT='%B%F{cyan}Saleem%f%b%F{reset} '$PROMPT    # This forces your name
 # => 1. Auto-Suggestion Color (The "Ghost" text)
 # I changed this to Grey (#6272a4) so it looks different from your typing.
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4,bold"
+
 
 # => 2. Syntax Highlighting Colors (The text you actually type)
 ZSH_HIGHLIGHT_STYLES[command]='fg=#ff79c6,bold'       # Your commands stay Neon Pink
